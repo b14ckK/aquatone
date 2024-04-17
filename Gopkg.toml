@@ -46,7 +46,7 @@
   version = "0.2.15"
 
 [[constraint]]
-  name = "github.com/mvdan/xurls"
+  name = "mvdan.cc/xurls/v2/cmd/xurls"
   version = "2.0.0"
 
 [[constraint]]
