@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"io"
 
-	"github.com/mvdan/xurls"
+	"mvdan.cc/xurls/v2/cmd/xurls"
 )
 
 type RegexParser struct{}
@@ -19,7 +19,7 @@ func (p *RegexParser) Parse(r io.Reader) ([]string, error) {
 
 	scanner := bufio.NewScanner(r)
 	for scanner.Scan() {
-		for _, target := range xurls.Relaxed.FindAllString(scanner.Text(), -1) {
+		for _, target := range xurls.Relaxed().FindAllString(scanner.Text(), -1) {
 			if _, found := targetsFilter[target]; found {
 				continue
 			}
